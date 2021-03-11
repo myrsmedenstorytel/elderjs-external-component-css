@@ -2,8 +2,8 @@
   import HookDetail from '../../components/HookDetail.svelte';
   import BlogTeaser from '../../components/BlogTeaser.svelte';
   import Clock from '../../components/Clock.svelte';
+  import HydratedExternal from '../../components/HydratedExternal.svelte';
 
-  import { Button } from 'test-external-svelte-library';
   export let data, helpers;
 
   export let foo;
@@ -86,17 +86,17 @@
 
 <div class="banner">
   <h1>Hello World: Welcome to Elder.js!</h1>
-  <Button>Please click me!</Button>
+  <HydratedExternal hydrate-client={{}} />
   <p>Woot! You've got Elder.js installed. This template is designed to show you the ropes of how things work.</p>
 
   <p>
-    We've tried to make this site a bit of a tutorial, but be sure to check out the full <a href="https://elderguide.com/tech/elderjs/">Elder.js
-      docs.</a>
+    We've tried to make this site a bit of a tutorial, but be sure to check out the full
+    <a href="https://elderguide.com/tech/elderjs/">Elder.js docs.</a>
   </p>
 
   <p>
-    Enjoy playing around with Elder.js and, if you hit a snag with the template, open a <a href="https://github.com/Elderjs/template/issues">GitHub
-      issue.</a>
+    Enjoy playing around with Elder.js and, if you hit a snag with the template, open a
+    <a href="https://github.com/Elderjs/template/issues">GitHub issue.</a>
   </p>
 </div>
 
@@ -111,20 +111,23 @@
 <div class="about">
   <h2>About This Template</h2>
   <p>
-    This example project is made up of 4 routes; you can find them by looking within the <span
-      class="code">./src/routes/</span> folder. They are:
+    This example project is made up of 4 routes; you can find them by looking within the
+    <span class="code">./src/routes/</span>
+    folder. They are:
   </p>
 
   <ul>
     <li><a href={helpers.permalinks.simple({ slug: 'simple' })}>Simple</a> - A barebones route.</li>
     <li>Home - The page you are on.</li>
     <li>
-      Blog - Linked from above, but you can also see a blog post by checking out: <a
-        href={helpers.permalinks.blog({ slug: 'getting-started' })}>'Getting Started'</a> .
+      Blog - Linked from above, but you can also see a blog post by checking out:
+      <a href={helpers.permalinks.blog({ slug: 'getting-started' })}>'Getting Started'</a>
+      .
     </li>
     <li>
-      Hooks - These are how you customize Elder.js. Details are below, and we've used the <span
-        class="code">hookInterface</span> to build out dedicated pages for each hook as well.
+      Hooks - These are how you customize Elder.js. Details are below, and we've used the
+      <span class="code">hookInterface</span>
+      to build out dedicated pages for each hook as well.
     </li>
   </ul>
 
@@ -134,21 +137,26 @@
   </p>
   <h3>Development Environment:</h3>
   <p>
-    If you ran <span class="code">npm start</span> to see this page, we recommend you stop that command. Instead, open two
-    terminals and run:
+    If you ran
+    <span class="code">npm start</span>
+    to see this page, we recommend you stop that command. Instead, open two terminals and run:
   </p>
   <ol>
     <li>
-      <span class="code">npm run dev:server</span> - This uses nodemon to restart the development server when files change.
+      <span class="code">npm run dev:server</span>
+      - This uses nodemon to restart the development server when files change.
     </li>
     <li>
-      <span class="code">npm run dev:rollup</span> - This uses rollup to recompile your Svelte templates as you change them.
+      <span class="code">npm run dev:rollup</span>
+      - This uses rollup to recompile your Svelte templates as you change them.
     </li>
   </ol>
 
   <p>
-    <strong>Note:</strong> Make sure you also check out <code>npm run build</code>, which will statically generate this same
-    site so that it can be deployed with a static site host such as Netlify, Cloudflare Workers, Vercel, or S3.
+    <strong>Note:</strong>
+    Make sure you also check out
+    <code>npm run build</code>, which will statically generate this same site so that it can be deployed with a static
+    site host such as Netlify, Cloudflare Workers, Vercel, or S3.
   </p>
 </div>
 
@@ -160,11 +168,13 @@
       By default, Elder.js statically renders Svelte components, only mounting them in the browser when it encounters a
       Svelte component which includes the
       <!-- Note: the actual prop is 'hydrate-client={}' but Svelte doesn't render empty objects-->
-      <code>hydrate-client={JSON.stringify({})}</code> prop.
+      <code>hydrate-client={JSON.stringify({})}</code>
+      prop.
     </p>
     <p>
-      The <a href="https://svelte.dev/examples#clock">clock</a> on this page is an example of a component that has been
-      hydrated on the client.
+      The
+      <a href="https://svelte.dev/examples#clock">clock</a>
+      on this page is an example of a component that has been hydrated on the client.
     </p>
     <p>This approach makes it easy to build SEO friendly websites, with Svelte for interactivity when needed.</p>
     <p>By default all hydrated components are lazy loaded with an intersection observer.</p>

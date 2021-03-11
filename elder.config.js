@@ -7,6 +7,7 @@ module.exports = {
   server: {
     prefix: '',
   },
+  css: 'inline',
   debug: {
     stacks: false,
     hooks: false,
